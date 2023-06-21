@@ -1,0 +1,35 @@
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+    print("Task added:", task)
+
+def mark_task_as_completed(task):
+    if task in tasks:
+        tasks.remove(task)
+        print("Task marked as completed:", task)
+    else:
+        print("Task not found in the list.")
+
+def remove_task(task):
+    if task in tasks:
+        tasks.remove(task)
+        print("Task removed:", task)
+    else:
+        print("Task not found in the list.")
+
+def show_tasks():
+    if tasks:
+        print("Tasks:")
+        for index, task in enumerate(tasks, start=1):
+            print(f"{index}. {task}")
+    else:
+        print("No tasks found.")
+
+# Sample usage:
+add_task("Buy groceries")
+add_task("Finish homework")
+show_tasks()
+mark_task_as_completed("Buy groceries")
+remove_task("Finish homework")
+show_tasks()
